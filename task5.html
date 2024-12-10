@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>loginpage1
+</title>
+<script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username === "" || password === "") {
+        alert("Username or Password cannot be empty");
+        return false;
+      }
+var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+     var mobilePattern = /^[0-9]{10}$/;
+      if (!emailPattern.test(username) && !mobilePattern.test(username)) {
+        alert("Username must be a valid email or a 10-digit mobile number.");
+        return false;
+      }
+
+      var specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+      var numbers = /[0-9]/;
+      var uppercase = /[A-Z]/;
+      var lowercase = /[a-z]/;
+
+      if (!specialChars.test(password) || !numbers.test(password) || !uppercase.test(password) || !lowercase.test(password)) {
+        alert("Password must contain at least one special character, one number, one uppercase letter, and one lowercase letter.");
+        return false;
+      }
+
+
+
+      alert("Login Successful!");
+      return true;
+    }
+  </script>
+
+<title>Login Page</title>
+</head>
+<body style=background-image:url("D:\image.jpg");background-repeat:no-repeat;background-size:cover>
+<table align="center" >
+<tr >
+<td >username
+</td>
+<td><input id="username" type ="text" placeholder="Email address or phone number">
+</td>
+</tr>
+<tr id=pass><td>password</td>
+<td><input id="password" type="password" placeholder="Password">
+</tr>
+<tr>
+<td></td>
+<td><button type="submit" onclick="validateForm()"> Login</button></td>
+</tr>
+</table>
+</body>
+</html>
+
+
